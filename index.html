@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по информатике</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <!-- Главная страница -->
+        <section id="start-screen" class="screen start-screen">
+
+            <div class="decoration code">&lt;/&gt;</div>
+            <div class="decoration binary">0
+1
+0
+1</div>
+            <div class="decoration chip">▦</div>
+
+            <div class="start-content">
+                <p class="small-title">МИР ЦИФРОВЫХ ТЕХНОЛОГИЙ</p>
+
+                <h1>
+                    Тест по
+
+                    <span>информатике</span>
+                </h1>
+
+                <p class="subtitle">
+                    Проверь свои знания в мире технологий!
+                </p>
+
+                <p class="description">
+                    20 вопросов · 2 части · 10–11 класс
+                </p>
+
+                <button class="main-button" onclick="startTest()">
+                    Начать тест →
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Экран теста -->
+        <section id="quiz-screen" class="screen quiz-screen hidden">
+
+            <header class="quiz-header">
+
+                <div class="counter">
+                    ◆ <span id="question-number">Вопрос 1 из 20</span>
+                </div>
+
+                <div class="progress">
+                    <div id="progress-bar"></div>
+                </div>
+
+                <div class="part">
+                    Часть I
+                </div>
+
+            </header>
+
+            <div class="question-container">
+
+                <div class="question-card">
+
+                    <p id="question-category"></p>
+
+                    <h2 id="question"></h2>
+
+                    <pre id="question-code" class="hidden"></pre>
+
+                    <p id="multiple-hint" class="hidden">
+                        Можно выбрать несколько вариантов ответа
+                    </p>
+
+                </div>
+
+                <div id="answers" class="answers"></div>
+
+            </div>
+
+            <footer class="quiz-footer">
+
+                <button id="back-button" class="back-button"
+                        onclick="previousQuestion()">
+                    ← Назад
+                </button>
+
+                <p id="hint">Выбери ответ, чтобы продолжить</p>
+
+                <button id="next-button" class="main-button"
+                        onclick="nextQuestion()" disabled>
+                    Далее →
+                </button>
+
+            </footer>
+
+        </section>
+
+        <!-- Экран результата -->
+        <section id="result-screen" class="screen result-screen hidden">
+
+            <div class="result-card">
+
+                <p class="small-title">ТВОЙ РЕЗУЛЬТАТ</p>
+
+                <h2>Тест завершён!</h2>
+
+                <p class="result-label">
+                    Ваш результат:
+                </p>
+
+                <div class="score">
+                    <span id="score">0</span>
+                    <span>из 20</span>
+                </div>
+
+                <p id="result-message"></p>
+
+                <button class="main-button" onclick="restartTest()">
+                    Пройти ещё раз ↻
+                </button>
+
+                <button class="review-button" onclick="showReview()">
+                    Посмотреть ответы
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Разбор ответов -->
+        <section id="review-screen" class="screen review-screen hidden">
+
+            <h2>Разбор ответов</h2>
+
+            <div id="review-list"></div>
+
+            <button class="main-button" onclick="showResult()">
+                ← К результату
+            </button>
+
+            <button class="review-button" onclick="restartTest()">
+                Пройти ещё раз
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
